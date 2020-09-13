@@ -1,0 +1,118 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;500&display=swap');
+@font-face {
+    font-family: 'Ruler Stencil';
+    src: url('/assets/fonts/Ruler\ Stencil\ Italic.ttf') format('truetype')
+}
+
+/* Universal */
+.show {
+    opacity: 1 !important;
+    transition: opacity 500ms;
+}
+.hide {
+    opacity: 0 !important;
+    transition: opacity 500ms;
+}
+.visible {
+    visibility: visible !important;
+}
+
+html, body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.1rem;
+}
+section:not(#landing) {
+    padding: 54px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+}
+section:not(#landing):last-of-type {
+    border: none;
+}
+section h3 {
+    font-size: 2.35rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+section img {
+    width: 100%;
+
+    border-radius: 10px;
+    /* border: 2.5px solid #000; */
+}
+
+/* Navigation */
+.navbar {
+    opacity: 0;
+    visibility: collapse;
+}
+
+/* Landing */
+#landing {
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(/assets/landing-sample.png);
+    background-size: cover;
+    background-position: center center;
+
+    position: relative;
+}
+#landing-shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+#landing span {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Order Form */
+#stencil_text_container {
+    background-color: #000;
+    color: #fff;
+    
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0.25rem;
+}
+#stencil_text_container span {
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-family: 'Ruler Stencil', sans-serif !important;
+}
+#stencil_image {
+    max-width: 200px;
+}
+
+/* Contact Form */
+#contact textarea {
+    resize: none;
+}
+
+/* Footer */
+footer {
+    opacity: 0;
+    visibility: collapse;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+
+    padding: 0.5rem 0.125rem;
+}
+#powered {
+    font-size: 1.5rem;
+}

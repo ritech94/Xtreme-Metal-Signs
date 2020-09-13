@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Xtreme Metal Signs</title>
+
+        <link rel="shortcut icon" href="https://via.placeholder.com/50x50">
+
+        <!-- CSS Styles -->
+        <!-- Bootstrap -->
+        <!-- <link rel="stylesheet" href="./vendor/bootstrap/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- Custom -->
+        <link rel="stylesheet" href="./css/app.css">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="navController">
+            <div class="container">
+                <!-- Navbar Brand -->
+                <a class="navbar-brand" rel="norefferer" href="#page-top">
+                    <span>
+                        Xtreme Metal Signs
+                    </span>
+                </a>
+
+                <!-- Collapsible Nav Button -->
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible Nav -->
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" rel="norefferer" href="#">Home</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" rel="norefferer" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" rel="norefferer" href="#products">Products</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" rel="norefferer" href="#order">Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" rel="norefferer" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main -->
+        <main id="page-top">
+            <section id="landing">
+                <div id="landing-shadow"></div>
+                <span>Test Landing</span>
+            </section>
+            <section id="about" class="container">
+                <h3>About</h3>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque odio corrupti nisi totam mollitia ab nobis vero possimus? Quis tempora nostrum sit, illo perspiciatis temporibus nemo quas totam exercitationem est!</span>
+            </section>
+            <section id="products" class="container">
+                <h3>Products</h3>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img class="mb-2" src="assets/Horse1.png" alt="Sample Image">
+                        <h3>
+                            <small>
+                                Grazing Horse
+                            </small>
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img class="mb-2" src="assets/Horse2.png" alt="Sample Image">
+                        <h3>
+                            <small>
+                                Trotting Horse
+                            </small>
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img class="mb-2" src="assets/Horse3.png" alt="Sample Image">
+                        <h3>
+                            <small>
+                                Reining Horse
+                            </small>
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img class="mb-2" src="assets/Horse4.png" alt="Sample Image">
+                        <h3>
+                            <small>
+                                Jumping Horse
+                            </small>
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img class="mb-2" src="assets/Horse5.png" alt="Sample Image">
+                        <h3>
+                            <small>
+                                Miniature Horse
+                            </small>
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img class="mb-2" src="assets/Horse6.png" alt="Sample Image">
+                        <h3>
+                            <small>
+                                Stocky Pony
+                            </small>
+                        </h3>
+                        <hr>
+                    </div>
+                </div>
+            </section>
+            <section id="order" class="container">
+                <h3>Order</h3>
+
+                <form class="d-flex flex-column align-items-center" method="POST">
+                    <div class="form-group">
+                        <select class="form-control" id="design_select">
+                            <option value="">Select Design</option>
+                            <option value="1">Grazing Horse</option>
+                            <option value="2">Trotting Horse</option>
+                            <option value="3">Reining Horse</option>
+                            <option value="4">Jumping Horse</option>
+                            <option value="5">Miniature Horse</option>
+                            <option value="6">Stocky Pony</option>
+                            <option value="7">Dressage Horse</option>
+                        </select>
+                    </div>
+                    <input id="stencil_phrase_input" class="form-control w-75 text-center mb-2" type="text" placeholder="Name goes here..." required />
+
+                    <button type="submit" class="btn btn-submit btn-secondary">Finalize Order</button>
+                </form>
+
+                <hr>
+                <h3>
+                    <small>
+                        Order Preview
+                    </small>
+                </h3>
+                <img src="./assets/Horse1.png" alt="Horse Image" id="stencil_image">
+                <div id="stencil_text_container">
+                    <span>
+                        Name goes here...
+                    </span>
+                </div>
+            </section>
+            <section id="contact" class="container">
+                <h3>Contact</h3>
+
+                <ul class="fa-ul mb-4 ml-0">
+                    <li id="mail-address">
+                        <i class="fas fa-envelope-open mr-2 contact-icons"></i>
+                        farrier.rik@gmail.com
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt mr-2 contact-icons"></i>
+                        21065 Riverview Drive, Thorndale, ON
+                    </li>
+                </ul>
+
+                <p>
+                    ...or leave your message below and I will be back to you as soon as possible.
+                </p>
+
+                <form class="contact-form d-flex flex-column align-items-center" method="POST">
+                    <div class="form-group w-75">
+                        <input type="text" class="form-control" placeholder="Name" name="name" required />
+                    </div>
+                    <div class="form-group w-75">
+                        <input type="email" class="form-control" placeholder="Email" name="email" required />
+                    </div>
+                    <div class="form-group w-75">
+                        <textarea class="form-control" placeholder="Message" rows="7" name="name"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit btn-secondary w-75">Submit</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="fixed-bottom" id="footerController">
+            <span>
+                Copyright &copy; <span id="year"></span> Xtreme Metal Signs.
+            </span>
+            <br>
+            <span id="powered">Powered by RiTech Services</span>
+        </footer>
+
+        <!-- JS Scripts -->
+        <!-- Bootstrap -->
+        <!-- <script src="./vendor/bootstrap/jquery-3.5.1.min.js"></script>
+        <script src="./vendor/bootstrap/popper.min.js"></script>
+        <script src="./vendor/bootstrap/bootstrap.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" data-auto-replace-svg="nest"></script>
+
+        <!-- Custom -->
+        <script src="./js/app.js"></script>
+    </body>
+</html>
