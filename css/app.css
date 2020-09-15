@@ -1,118 +1,119 @@
-/* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;500&display=swap');
+/* EXTERNAL FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 @font-face {
     font-family: 'Ruler Stencil';
-    src: url('/assets/fonts/Ruler\ Stencil\ Italic.ttf') format('truetype')
+    src: url('../assets/fonts/Ruler\ Stencil\ Italic.ttf') format('truetype')
 }
 
-/* Universal */
-.show {
-    opacity: 1 !important;
-    transition: opacity 500ms;
-}
-.hide {
-    opacity: 0 !important;
-    transition: opacity 500ms;
-}
-.visible {
-    visibility: visible !important;
-}
-
+/* UNIVERSAL */
 html, body {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 1.1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    /* DEFAULT FONT FAMILY */
+    font-family: 'Roboto', sans-serif;
+}
+h3 {
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 section:not(#landing) {
     padding: 54px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-
-    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.65);
 }
 section:not(#landing):last-of-type {
     border: none;
 }
-section h3 {
-    font-size: 2.35rem;
-    color: #000;
-    margin-bottom: 0.5rem;
-
-    text-align: center;
-    text-transform: uppercase;
-}
 section img {
     width: 100%;
-
-    border-radius: 10px;
-    /* border: 2.5px solid #000; */
+}
+.hidden {
+    display: none;
 }
 
-/* Navigation */
-.navbar {
-    opacity: 0;
-    visibility: collapse;
-}
+/* NAVIGATION */
 
-/* Landing */
+/* MAIN */
+
+/* LANDING */
 #landing {
     width: 100%;
-    height: 100vh;
-
-    background-image: url(/assets/landing-sample.png);
-    background-size: cover;
-    background-position: center center;
-
-    position: relative;
+    height: 100vh;  
+    position: relative;  
 }
 #landing-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.8);
 }
-#landing span {
-    color: #fff;
-    font-size: 2rem;
-    text-align: center;
-
+#landing-caption {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    font-size: 3.5rem;
+    color: #FFF;
+    text-align: center;
 }
 
-/* Order Form */
-#stencil_text_container {
+/* ORDER FORM */
+#stencil-text-container {
     background-color: #000;
-    color: #fff;
-    
+    color: #FFF;
+
     max-width: 400px;
     margin: 0 auto;
     padding: 0.25rem;
 }
-#stencil_text_container span {
+#stencil-text-container span {
     font-size: 2.2rem;
     text-transform: uppercase;
     font-family: 'Ruler Stencil', sans-serif !important;
 }
-#stencil_image {
+#stencil-image {
     max-width: 200px;
 }
+#order-second-half {
+    text-align: center;
+}
+#modal-design-image {
+    width: 75%;
+}
 
-/* Contact Form */
+/* CONTACT FORM */
 #contact textarea {
     resize: none;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
-    opacity: 0;
-    visibility: collapse;
-
-    background-color: rgba(0, 0, 0, 0.8);
-    color: rgba(255, 255, 255, 0.6);
+    padding: 0.5rem 0;
+    background-color: #343A40;
+    color: #FFF;
     text-align: center;
-
-    padding: 0.5rem 0.125rem;
+}
+#copyright {
+    font-size: 0.9rem;
 }
 #powered {
-    font-size: 1.5rem;
+    font-size: 1.05rem;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 600px) {
+    section:not(#landing) {
+        padding: 54px 10px;
+    }
+
+    #order-second-half {
+        border-top: 1px solid rgba(0, 0, 0, 0.65);
+        padding-top: 0.8rem;
+        margin-top: 0.8rem;
+    }
 }

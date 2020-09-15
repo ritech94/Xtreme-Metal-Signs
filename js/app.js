@@ -1,69 +1,55 @@
-// Fade Functions
-function fadeIn(el) {
-    el.classList.add('show');
-    el.classList.remove('hide');
+// Calculate Rem Value
+function rem(x = 1) {    
+    return x * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
-function fadeOut(el) {
-    el.classList.add('hide');
-    el.classList.remove('show');
-}
-
-// Navbar and Footer Objects
-let nav = document.getElementById('navController');
-let footer = document.getElementById('footerController');
-
-// Control .navbar and footer visibility by scrolling
-(function($) {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        var landingHeight = 10;
-    } else {
-        var landingHeight = 50;
-    }
-
-    console.log(landingHeight);
-
-    $(document).ready(function() {
-        nav.classList.add('visible');
-        footer.classList.add('visible');
-
-        if ($(window).scrollTop() > landingHeight) {
-            fadeIn(nav);
-            fadeIn(footer);
-        }
-
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > landingHeight) {
-                fadeIn(nav);
-                fadeIn(footer);
-            } else {
-                fadeOut(nav);
-                fadeOut(footer);
-            }
-        });
-    });
-})(jQuery);
 
 $(document).ready(() => {
     // Auto Populate Copyright Year
     let year = new Date().getFullYear();
     $('#year').text(year);
-})
 
-// Auto-Detect Text Change
-$('#stencil_phrase_input').on('keyup', () => {
-    let phrase = $('#stencil_phrase_input').val();
-    $('#stencil_text_container span').text(phrase);
+    // Auto-Change Order Text
+    $('#stencil-phrase-input').on('keyup', () => {
+        let text = $('#stencil-phrase-input').val();
+        $('#stencil-text-container span').text(`${text}`);
 
-    if (phrase === '') {
-        $('#stencil_text_container span').text('Name goes here...');
-    }
-})
+        if (text === '') {
+            $('#stencil-text-container span').text('Name goes here...');
+        }
+    })
 
-// Auto-Detect Select Change
-$('#design_select').on('change', () => {
-    let val = $('#design_select').val();
-    let img_src = val !== '' && val < 7 ? `./assets/Horse${val}.png` : `./assets/Horse1.png`;
-    $('#stencil_image').attr('src', img_src);
+    // Auto-Change Stencil Design
+    $('#design-select').on('change', () => {
+        let val = $('#design-select').val();
+        let img_src = val != '' && val < 7 ? `./assets/Horse${val}.png` : `./assets/Horse1.png`;
+        $('#stencil-image').attr('src', img_src);
+    })
+
+    // Show Delivery Info on Delivery Radio Click
+    $('#order_radio_1').on('click', () => {
+        $('#order-delivery').removeClass('hidden');
+    })  
+    $('#order_radio_2').on('click', () => {
+        $('#order-delivery').addClass('hidden');
+    })
+
+    // Open Order Modal on Form Submit
+    $('#order-form').on('submit', event => {
+        // Prevent default submit actions
+        event.preventDefault();
+
+        // Pre-populate modal
+        let image_src = ($('#design-select').val() > 0) ? `./assets/Horse${$('#design-select').val()}.png` : `./assets/Horse1.png`;
+        let design = ($('#design-select').val() > 0) ? $('#design-select option:selected').text() : 'Grazing Horse';
+        let name = $('#stencil-phrase-input').val();
+
+        $('#modal-design-image').attr('src', image_src);
+        $('#modal-design-name').html(design);
+        $('#modal-custom-name').html(name);
+
+        // Show Order Modal
+        $('#order-modal').modal('show');
+    })
 })
 
 // Smooth Scroll to Anchor
@@ -74,20 +60,7 @@ $('.navbar a[href*="#"]').on('click', function(event) {
         let hash = this.hash;
 
         $('html, body').animate({
-            scrollTop: $(hash).offset().top
+            scrollTop: $(hash).offset().top - rem()
         }, 800)
     }
 })
-
-// jQuery Onload and Onresize
-$(window).on('resize', () => {
-    // Auto Main Top Padding
-    let nav_height = $('.navbar').outerHeight();
-    console.log(`Nav Height: ${nav_height}px`)
-    // $('main').css('padding-top', nav_height);
-
-    // Auto Main Bottom Padding
-    let footer_height = $('footer').outerHeight();
-    console.log(`Footer Height: ${footer_height}px`);
-    $('main').css('padding-bottom', footer_height);
-}).resize(); // Invoke resize event immediately
