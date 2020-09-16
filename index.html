@@ -27,7 +27,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6 col-12">
-                                <form method="POST">
+                                <form method="POST" id="order_modal_form">
                                     <div class="form-group">
                                         <input class="form-control" type="text" name="name" id="order-name" placeholder="Name" required />
                                     </div>
@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="province" id="order-city" placeholder="Province" required />
+                                                    <input class="form-control" type="text" name="province" id="order-province" placeholder="Province" required />
                                                 </div>
                                             </div>
                                         </div>
@@ -68,7 +68,7 @@
                                 </form>
                             </div>
                             <div class="col-md-6 col-12" id="order-second-half">
-                                <img id="modal-design-image" src="./assets/Horse1.png" alt="Horse Design Image">
+                                <img id="modal-design-image" src="./assets/products/Horse1.png" alt="Horse Design Image">
                                 <br>
                                 Design: <span id="modal-design-name">Test Design</span>
                                 <br>
@@ -79,6 +79,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="order_modal_submit">Submit Order</button> 
                     </div>
                 </div>
             </div>
@@ -125,7 +126,7 @@
             <section id="landing">
                 <div id="landing-shadow">
                     <span id="landing-caption">
-                        Text goes here
+                        XTREME METAL SIGNS
                     </span>
                 </div>
             </section>
@@ -134,7 +135,7 @@
             <section id="about" class="container text-center">
                 <h3>About Us</h3>
                 <span>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos cumque, ad similique sequi provident nemo aliquid quis at enim praesentium hic omnis eos expedita voluptate molestias esse, sed, adipisci aliquam!
+                    Welcome to our webpage. We are a family owned business that started as a part time business to help out fellow horse lovers just like us and to give those special fur babies a beautiful stall sign marked just for them! Thanks for your support. We will be branching out into fire pits, custom spectacular farm name signs, family monograms and so much more. If you give us an idea, we will do our best to design it to absolute perfection for you.
                 </span>
             </section>
 
@@ -144,28 +145,22 @@
 
                 <div class="row justify-content-center">
                     <div class="col-lg-2 col-md-4 col-9">
-                        <img src="./assets/Horse1.png" alt="Sample Image">
-                        <h3>
-                            <small>
-                                Sample 1
-                            </small>
-                        </h3>
+                        <img src="./assets/gallery/Gallery1.png" alt="Sample Image">
                     </div>
                     <div class="col-lg-2 col-md-4 col-9">
-                        <img src="./assets/Horse2.png" alt="Sample Image">
-                        <h3>
-                            <small>
-                                Sample 2
-                            </small>
-                        </h3>
+                        <img src="./assets/gallery/Gallery2.png" alt="Sample Image">
                     </div>
                     <div class="col-lg-2 col-md-4 col-9">
-                        <img src="./assets/Horse3.png" alt="Sample Image">
-                        <h3>
-                            <small>
-                                Sample 3
-                            </small>
-                        </h3>
+                        <img src="./assets/gallery/Gallery3.png" alt="Sample Image">
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img src="./assets/gallery/Gallery4.png" alt="Sample Image">
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img src="./assets/gallery/Gallery5.png" alt="Sample Image">
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-9">
+                        <img src="./assets/gallery/Gallery6.png" alt="Sample Image">
                     </div>
                 </div>
             </section>
@@ -175,6 +170,15 @@
                 <h3>Order Now</h3>
 
                 <form class="d-flex flex-column align-items-center" method="POST" id="order-form">
+                    <div class="form-group">
+                        <label>
+                            <small>
+                                Size: 14" x 9"<br>
+                                Cost: $20 + tax<br>
+                                Shipping may vary
+                            </small>
+                        </label>
+                    </div>
                     <div class="form-group">
                         <select class="form-control" id="design-select">
                             <option value="">Select Design</option>
@@ -198,7 +202,7 @@
                         Order Preview
                     </small>
                 </h3>
-                <img src="./assets/Horse1.png" alt="Horse Image" id="stencil-image">
+                <img src="./assets/products/Horse1.png" alt="Horse Image" id="stencil-image">
                 <div id="stencil-text-container">
                     <span>
                         Name goes here...
@@ -225,15 +229,15 @@
                     ...or leave your message below and I will be back to you as soon as possible.
                 </p>
 
-                <form class="contact-form d-flex flex-column align-items-center" method="POST">
+                <form class="contact-form d-flex flex-column align-items-center" method="POST" id="contact-form">
                     <div class="form-group w-75">
-                        <input type="text" class="form-control" placeholder="Name" name="name" required />
+                        <input type="text" class="form-control" placeholder="Name" name="name" id="contact_name" required />
                     </div>
                     <div class="form-group w-75">
-                        <input type="email" class="form-control" placeholder="Email" name="email" required />
+                        <input type="email" class="form-control" placeholder="Email" name="email" id="contact_email" required />
                     </div>
                     <div class="form-group w-75">
-                        <textarea class="form-control" placeholder="Message" rows="7" name="name"></textarea>
+                        <textarea class="form-control" placeholder="Message" rows="7" name="name" id="contact_message"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-submit btn-secondary w-75">Submit</button>
@@ -262,6 +266,14 @@
 
         <!-- FONT AWESOME -->
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" data-auto-replace-svg="nest"></script>
+
+        <!-- EMAILJS -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init("user_ppBwhJ24i9tP5rNtEwAV3");
+            })();
+        </script>
 
         <!-- CUSTOM -->
         <script src="./js/app.js"></script>
